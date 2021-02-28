@@ -8,8 +8,13 @@ namespace HW07.Task2
         {
             Console.WriteLine("Enter string:");
             string inputStr = Console.ReadLine();
+            Console.WriteLine("Deleted the longest word:");
             Console.WriteLine(Program.NoLongWord(inputStr));
+            Console.WriteLine("Changed the longest and the shortest words:");
             Console.WriteLine(Program.LongShortExch(inputStr));
+            Console.WriteLine("Count leters and signs:");
+            Console.WriteLine(Program.LeterCount(inputStr));
+            Console.WriteLine("From the shortest to the longest:");
             Console.WriteLine(Program.FromSToL(inputStr));
         }
 
@@ -51,7 +56,6 @@ namespace HW07.Task2
                 }
             minLWord = maxLWord;
             for (int i = 0; i < strArr.Length; i++)
-
                 if (strArr[i].Length < minLWord.Length)
                 {
                     minLWord = strArr[i];
@@ -76,7 +80,6 @@ namespace HW07.Task2
                     }
                 }
             }
-            
             return string.Join(' ', newArr); 
         }
         static string FromSToL(string newStr)
@@ -99,7 +102,30 @@ namespace HW07.Task2
         }
         static string LeterCount(string newStr)
         {
-            char[] byLeters = newStr.ToCharArray();
+            string upStr = newStr.ToUpper();
+            char[] byLeters = upStr.ToCharArray();
+            int leterCount = 0;
+            int signCount = 0;
+            foreach(char c in byLeters)
+            {
+                if (c >= 65 && c <= 90)
+                {
+                    leterCount++;
+                }
+                else
+                {
+                    if(c == 32)
+                    {
+
+                    }
+                    else
+                    {
+                        signCount++;
+                    }
+                } 
+            }
+            string finStr = "Leters: " + leterCount + "\n" + "Signs: " + signCount;
+            return finStr; 
         }
     }
 }
