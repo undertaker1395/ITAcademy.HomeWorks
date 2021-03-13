@@ -6,10 +6,10 @@ namespace HW09.Task1
 {
     class Passport
     {
-        internal string name = string.Empty;
-        internal string gender = string.Empty;
+        internal string name;
+        internal string gender;
         internal DateTime birthday;
-        internal string serialNumber = string.Empty;
+        internal string serialNumber;
         internal DateTime issued;
         internal DateTime expired;
     }

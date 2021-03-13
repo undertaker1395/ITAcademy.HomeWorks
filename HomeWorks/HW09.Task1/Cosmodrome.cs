@@ -7,7 +7,7 @@ namespace HW09.Task1
     class Cosmodrome
     {
         Passport passport = new Passport();
-        internal string shuttle = string.Empty;
+        internal string shuttle;
         internal bool CheckIn(string name, DateTime birthday, string gender, string baggage)
         {
             const int legalAge = 21;
@@ -38,7 +38,7 @@ namespace HW09.Task1
             DateTime dateNow = DateTime.Today;
             if (serialNumber != string.Empty && gotTicket == 1)
             {
-                if ((dateNow - expired).TotalDays >= 365)
+                if ((expired - dateNow).TotalDays >= 365)
                 {
                     return true;
                 }
