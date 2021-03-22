@@ -63,10 +63,11 @@ namespace Garage.Controllers
         // POST: MotoController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Moto moto)
         {
             try
             {
+                _motoRepository.UpdateMotorcycle(moto);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -88,7 +89,7 @@ namespace Garage.Controllers
         {
             try
             {
-                _motoRepository.DeleteMotorcycle();
+                _motoRepository.DeleteMotorcycle(moto);
                 return RedirectToAction(nameof(Index));
             }
             catch

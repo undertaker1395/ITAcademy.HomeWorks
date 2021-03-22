@@ -18,9 +18,9 @@ namespace Garage.BL
             }
         }
 
-        public void DeleteMotorcycle()
+        public void DeleteMotorcycle(Moto moto)
         {
-            _motos.Remove(_motos.Last());
+            _motos.Remove(moto);
         }
 
         public List<Moto> GetMotorcycles()
@@ -30,7 +30,11 @@ namespace Garage.BL
 
         public void UpdateMotorcycle(Moto moto)
         {
-            
+            _motos.Remove(moto);
+            if (moto != null)
+            {
+                _motos.Add(moto);
+            }
         }
     }
 }

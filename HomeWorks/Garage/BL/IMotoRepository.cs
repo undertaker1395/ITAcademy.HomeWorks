@@ -12,7 +12,7 @@ namespace Garage.BL
         List<Moto> GetMotorcycles();
 
         void CreateMotorcycle(Moto moto);
-        void DeleteMotorcycle();
+        void DeleteMotorcycle(Moto moto);
         void UpdateMotorcycle(Moto moto);
 
         #endregion
